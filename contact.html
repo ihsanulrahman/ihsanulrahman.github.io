@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NIRANJAN BR</title>
+    <title>iHSAN</title>
 
     <!-- Favicons -->
-    <link href="images/favi-icon/fox.png" rel="icon">
-    <link href="images/favi-icon/fox-icon.png" rel="karthik-icon">
+    <link href="images/favi-icon/ihsan.jpg" rel="icon"> 
+    <link href="images/favi-icon/ihsan.jpg" rel="shortcut icon"> 
     
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -52,46 +52,42 @@
                 <i class="fas fa-map"></i>
                 <div class="info">
                     <h3>Address :</h3>
-                    <p>India, Kerala</p>
+                    <p>Lahore, Pakistan</p>
                 </div>
             </div>
 
             <div class="box">
-                <i class="fas fa-envelope"></i>
-                <div class="info">
-                    <h3>Email :</h3>
-                    <p><a href="mailto:niranjankannan2003@gmail.com">niranjankannan2003@gmail.com</a></p>
-                </div>
-            </div>
+              <i class="fas fa-envelope"></i>
+              <div class="info">
+                  <h3>Email :</h3>
+                  <p><a href="mailto:ihsanulrahman@gmail.com">ihsanulrahman@gmail.com</a></p>
+              </div>
+          </div>
 
         </div>
 
         <div class="share">
-            <a href="https://github.com/mrfox2003" class="fab fa-github"></a>
-            <a href="https://gitlab.com/mrfox2003" class="fab fa-gitlab"></a>
-            <a href="mailto:niranjankannan2003@gmail.com" class="fab fa-google"></a>
-            <a href="https://instagram.com/_mrfox_2003" class="fab fa-instagram"></a>
-            <a href="https://twitter.com/_mrfox2003" class="fab fa-twitter"></a>
-            <a href="https://www.facebook.com/niranjan.baiju.33" class="fab fa-facebook"></a>
-            <a href="https://t.me/mrfox2003" class="fab fa-telegram"></a>
-            <a href="https://www.linkedin.com/in/niranjan-b-r-a18b2b224" class="fab fa-linkedin"></a>
+            <a href="https://github.com/ihsanulrahman" class="fab fa-github"></a>
+            <a href="https://t.me/ihsanulrahman" class="fab fa-telegram"></a>
+            <a href="https://instagram.com/ihsanulrahman" class="fab fa-instagram"></a>
+
         </div>
 
     </div>
 
-    <form action="php/mail.php" method="post">
+    <form id="contactForm" action="https://formspree.io/f/xyzzanjk" method="post">
 
         <div class="inputBox">
-            <input type="text" name="fname" placeholder="Your name">
-            <input type="number" name="phone" placeholder="Your number">
+            <input type="text" name="fname" placeholder="Your name" required>
+            <input type="number" name="phone" placeholder="Your number" required>
         </div>
 
         <div class="inputBox">
-            <input type="email" name="email" placeholder="Your email">
-            <input type="text" name="subject" placeholder="Your subject">
+            <input type="email" name="email" placeholder="Your email" required>
+            <input type="text" name="subject" placeholder="Your subject" required>
         </div>
 
-        <textarea name="message" placeholder="Your message" id="" cols="30" rows="10"></textarea>
+        <textarea name="message" placeholder="Your message" id="" cols="30" rows="10" required></textarea>
 
         <input type="submit" value="Send Message" class="btn">
 
@@ -100,6 +96,22 @@
 </div>
 
 </section>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    let fname = document.getElementById("fname").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+
+    // Check if any required field is empty
+    if (!fname || !phone || !email || !subject || !message) {
+      alert("Please fill out all fields before submitting.");
+      event.preventDefault();  // Prevent form submission
+    }
+  });
+</script>
 
 <script src="js/security.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
