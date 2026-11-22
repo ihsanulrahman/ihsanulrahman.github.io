@@ -1,225 +1,192 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" style="scroll-padding-top: 5rem;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iHSAN</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="theme-color" content="#151715">
+    <meta name="description" content="iHSAN — Med. Lab. Tech. and self-taught developer. VoltageOS device maintenance, Android development, and small, useful tools for the web.">
+    <meta property="og:title" content="iHSAN — Lab coat. Source code.">
+    <meta property="og:description" content="Med. Lab. Tech. with a curiosity for Android, the web, and how things work. Explore my selected projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ihsanulrahman.github.io/">
+    <meta property="og:image" content="https://ihsanulrahman.github.io/images/ihsan.png">
+    <title>iHSAN — Lab coat. Source code.</title>
+    <link rel="icon" href="images/ihsan.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/ihsan.png">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
+    <script src="script/script.js" defer></script>
 </head>
-<body class="antialiased">
-
-    <canvas id="particle-canvas"></canvas>
-
-    <div id="cursor-dot"></div>
-    <div id="cursor-outline"></div>
-
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold gradient-text">I</a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="nav-link text-slate-300 hover:text-white transition duration-300">About</a>
-                <a href="#experience" class="nav-link text-slate-300 hover:text-white transition duration-300">Experience</a>
-                <a href="#projects" class="nav-link text-slate-300 hover:text-white transition duration-300">Projects</a>
-                <a href="#contact" class="bg-violet-600 hover:bg-violet-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Contact</a>
-            </div>
-            <button id="mobile-menu-btn" class="md:hidden text-slate-300 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="wordmark" href="#home" aria-label="iHSAN, home">iHSAN<span aria-hidden="true">.</span></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>
+                <span class="menu-label">Menu</span>
+                <span class="menu-lines" aria-hidden="true"></span>
             </button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/90 backdrop-blur-sm">
-            <a href="#about" class="block py-3 px-6 text-center text-slate-300 hover:bg-slate-800">About</a>
-            <a href="#experience" class="block py-3 px-6 text-center text-slate-300 hover:bg-slate-800">Experience</a>
-            <a href="#projects" class="block py-3 px-6 text-center text-slate-300 hover:bg-slate-800">Projects</a>
-\            <a href="#contact" class="block py-3 px-6 text-center text-slate-300 hover:bg-slate-800">Contact</a>
+            <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+                <a href="#projects">Selected work</a>
+                <a href="#about">A little about me</a>
+                <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+            </nav>
         </div>
     </header>
 
-    <main class="container mx-auto px-6">
-        <section id="hero" class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center md:justify-between pt-24 md:pt-0">
-            <div class="text-center md:text-left max-w-xl">
-                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">Hi, I'm <span class="gradient-text">iHSAN</span></h1>
-                <p class="mt-4 text-lg text-slate-400">Student + Noob Custom ROM developer</p>
+    <main id="main">
+        <section class="hero container" id="home" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="small-cross" aria-hidden="true">+</span> Two worlds. One curious mind.</p>
+                <h1 id="hero-title">Lab coat.<br><span>Source code.</span></h1>
+                <p class="hero-intro">I’m <strong>iHSAN</strong> — a <strong>Med. Lab. Tech.</strong> and self-taught developer. I work with Android, build for the web, and enjoy figuring out how things work.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+                    <a class="text-link" href="https://github.com/ihsanulrahman" target="_blank" rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a>
+                </div>
+                <p class="hero-note"><span aria-hidden="true">//</span> Creating things. Occasionally breaking some.</p>
             </div>
-            <div class="mb-10 md:mb-0 md:ml-12">
-                 <img src="images/ihsan.png" alt="iHSAN" class="rounded-full w-64 h-64 md:w-96 md:h-96 object-cover border-4 border-violet-500 shadow-lg shadow-violet-500/20">
+            <div class="portrait-area">
+                <span class="portrait-coordinate coordinate-top" aria-hidden="true">01 / THE HUMAN</span>
+                <svg class="portrait-orbit" viewBox="0 0 460 460" fill="none" aria-hidden="true">
+                    <circle cx="230" cy="230" r="218" stroke="currentColor" stroke-dasharray="2 8"/>
+                    <circle cx="230" cy="230" r="191" stroke="currentColor"/>
+                    <path d="M230 0v35M230 425v35M0 230h35M425 230h35" stroke="currentColor"/>
+                </svg>
+                <figure class="portrait">
+                    <div class="portrait-image">
+                        <img src="images/ihsan.png" alt="iHSAN wearing a dark waistcoat and glasses" width="768" height="1343" fetchpriority="high">
+                        <span class="portrait-corner" aria-hidden="true">+</span>
+                    </div>
+                    <figcaption><span>iHSAN</span><span>Always learning <span class="caption-dot" aria-hidden="true"></span></span></figcaption>
+                </figure>
+                <span class="portrait-coordinate coordinate-bottom" aria-hidden="true">OBSERVE / BUILD / REPEAT</span>
             </div>
         </section>
 
-        <section id="about" class="py-20 md:py-32 reveal">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-                <img src="images/ihsan.png" alt="About iHSAN" class="w-full md:w-1/3 rounded-2xl shadow-lg">
-                <div class="md:w-2/3">
-                    <p class="text-slate-400 mb-6">
-                        I'm a student and self-taught developer who loves creating things and breaking some :-D.
-                    </p>
-                    <p class="text-slate-400 mb-8">
-                        In my free time, I design and develop web experiences and dive deep into Android development. I focus on clean, efficient code and enjoy experimenting, learning, and pushing my skills further with every project.
-                    </p>
-                    <h3 class="text-xl font-semibold text-white mb-4">My Tech Stack</h3>
-                    <div id="tech-icons-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
-                        <div class="flex flex-col items-center p-3 glass-card rounded-lg tech-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-10 h-10 mb-2">
-                            <span class="text-sm">HTML</span>
+        <div class="container disciplines" aria-label="My interests">
+            <div><span class="discipline-number">01</span><p><span class="eyebrow">Medical laboratory</span><span>A precise approach.</span></p><span class="discipline-symbol" aria-hidden="true">+</span></div>
+            <div><span class="discipline-number">02</span><p><span class="eyebrow">Android &amp; open source</span><span>Under the hood.</span></p><span class="discipline-symbol" aria-hidden="true">&lt;/&gt;</span></div>
+            <div><span class="discipline-number">03</span><p><span class="eyebrow">Web &amp; automation</span><span>Small, useful things.</span></p><span class="discipline-symbol" aria-hidden="true">↗</span></div>
+        </div>
+
+        <section class="work-section container section" id="projects" aria-labelledby="work-title">
+            <div class="section-heading">
+                <div><p class="eyebrow section-index">01 / Selected work</p><h2 id="work-title">Built with curiosity.</h2></div>
+                <p>A few things I maintain,<br>make, and tinker with.</p>
+            </div>
+            <article class="featured-project">
+                <div class="featured-copy">
+                    <p class="eyebrow project-category"><span class="status-dot" aria-hidden="true"></span> Android / Featured project</p>
+                    <h3>VoltageOS</h3>
+                    <p>A custom Android ROM, with care for the details that make a device feel right.</p>
+                    <p class="project-detail">I maintain builds for Mi-Atoll devices, work on stability and device-specific optimizations, and contribute fixes upstream.</p>
+                    <dl class="project-facts">
+                        <div><dt>My role</dt><dd>Device maintainer</dd></div>
+                        <div><dt>Device family</dt><dd>Mi-Atoll</dd></div>
+                    </dl>
+                    <ul class="tags" aria-label="VoltageOS technologies"><li>Android</li><li>AOSP</li><li>Device development</li></ul>
+                    <div class="project-links">
+                        <a class="text-link" href="https://www.voltageos.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the VoltageOS website">Visit website <span aria-hidden="true">↗</span></a>
+                        <a class="text-link secondary-link" href="https://github.com/VoltageOS" target="_blank" rel="noopener noreferrer" aria-label="View VoltageOS source on GitHub">Source code <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+                <figure class="featured-visual">
+                    <div class="visual-topline"><span class="eyebrow">Device development</span><span aria-hidden="true">[ 01 ]</span></div>
+                    <img src="images/voltageos.png" alt="VoltageOS project artwork" width="1920" height="1080" loading="lazy" decoding="async">
+                    <figcaption><span>Built on Android. Maintained with care.</span><span aria-hidden="true">↗</span></figcaption>
+                </figure>
+            </article>
+
+            <div class="project-grid">
+                <article class="small-project">
+                    <div class="project-artwork bash-artwork" aria-hidden="true">
+                        <div class="artwork-topline"><span>~/bash-berry</span><span>02 / AUTOMATION</span></div>
+                        <div class="terminal-line"><span class="terminal-prompt">$</span> make life_easier<span class="terminal-cursor"></span></div>
+                        <p>Less repetition. More building.</p>
+                        <span class="artwork-cross">+</span>
+                    </div>
+                    <div class="small-project-copy">
+                        <p class="eyebrow">Bash / Linux / Automation</p>
+                        <h3>Bashery <span class="project-alias">/ bash-berry</span></h3>
+                        <p>A collection of Bash scripts for cloning repositories and setting up development environments. Little shortcuts for the repetitive bits.</p>
+                        <a class="text-link" href="https://github.com/ihsanulrahman/bash-berry" target="_blank" rel="noopener noreferrer" aria-label="View Bashery source on GitHub">Explore the scripts <span aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+                <article class="small-project">
+                    <div class="project-artwork tally-artwork" aria-hidden="true">
+                        <div class="artwork-topline"><span>A small web experiment</span><span>03 / WEB</span></div>
+                        <div class="counter-preview"><span class="counter-control">−</span><span class="counter-value">001</span><span class="counter-control counter-plus">+</span></div>
+                        <p>One thing. Done simply.</p>
+                    </div>
+                    <div class="small-project-copy">
+                        <p class="eyebrow">HTML / JavaScript</p>
+                        <h3>Tally Counter</h3>
+                        <p>A simple web-based counter. A small experiment in building a straightforward tool for keeping count.</p>
+                        <div class="project-links">
+                            <a class="text-link" href="https://counter-tally.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Try the Tally Counter website">Try it out <span aria-hidden="true">↗</span></a>
+                            <a class="text-link secondary-link" href="https://github.com/ihsanulrahman/tally" target="_blank" rel="noopener noreferrer" aria-label="View Tally Counter source on GitHub">Source code <span aria-hidden="true">↗</span></a>
                         </div>
-                         <div class="flex flex-col items-center p-3 glass-card rounded-lg tech-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-10 h-10 mb-2">
-                            <span class="text-sm">CSS</span>
-                        </div>
-                        <div class="flex flex-col items-center p-3 glass-card rounded-lg tech-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-10 h-10 mb-2">
-                            <span class="text-sm">JavaScript</span>
-                        </div>
-                        <div class="flex flex-col items-center p-3 glass-card rounded-lg tech-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-10 h-10 mb-2">
-                            <span class="text-sm">Node.js</span>
-                        </div>
-                        <div class="flex flex-col items-center p-3 glass-card rounded-lg tech-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-10 h-10 mb-2">
-                            <span class="text-sm">Java</span>
-                        </div>
-                        <div class="flex flex-col items-center p-3 glass-card rounded-lg tech-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-10 h-10 mb-2">
-                            <span class="text-sm">Python</span>
-                        </div>
-                         <div class="flex flex-col items-center p-3 glass-card rounded-lg tech-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-10 h-10 mb-2">
-                            <span class="text-sm">C++</span>
-                        </div>
+                    </div>
+                </article>
+            </div>
+            <a class="all-projects text-link" href="https://github.com/ihsanulrahman?tab=repositories" target="_blank" rel="noopener noreferrer">More experiments on GitHub <span aria-hidden="true">↗</span></a>
+        </section>
+
+        <section class="about-section section" id="about" aria-labelledby="about-title">
+            <div class="container about-grid">
+                <div class="about-copy">
+                    <p class="eyebrow section-index">02 / A little about me</p>
+                    <h2 id="about-title">Different worlds.<br>Same attention<br>to detail.</h2>
+                    <p>I’m a Med. Lab. Tech. with a soft spot for technology. Medical lab work and software meet in the way I approach things: observe carefully, ask questions, and keep learning.</p>
+                    <p>Outside the lab, you’ll find me working on Android builds, writing scripts, or making something for the web. I’m self-taught, and figuring things out is half the fun.</p>
+                    <p class="about-signoff">Still curious. Still building. <span aria-hidden="true">:-D</span></p>
+                </div>
+                <div class="about-notes">
+                    <div class="lab-note">
+                        <div class="lab-note-top"><span class="eyebrow">A shared mindset</span><span aria-hidden="true">+</span></div>
+                        <svg class="lab-diagram" viewBox="0 0 340 142" fill="none" aria-hidden="true">
+                            <path d="M15 71h310M85 11v120M255 11v120" stroke="currentColor" stroke-dasharray="2 5" opacity=".35"/>
+                            <rect x="35" y="30" width="270" height="82" rx="6" stroke="currentColor" opacity=".55"/>
+                            <circle cx="170" cy="71" r="52" stroke="currentColor"/>
+                            <circle cx="170" cy="71" r="39" stroke="currentColor" opacity=".4"/>
+                            <circle cx="158" cy="63" r="9" fill="currentColor" opacity=".25"/>
+                            <circle cx="180" cy="83" r="6" fill="currentColor" opacity=".5"/>
+                            <circle cx="187" cy="57" r="4" fill="currentColor"/>
+                            <path d="M47 42h15M47 49h10M278 93h15M283 100h10" stroke="currentColor" opacity=".5"/>
+                        </svg>
+                        <p>Observe. Test. Refine.</p>
+                        <span class="lab-note-caption">From the microscope to the source code.</span>
+                    </div>
+                    <div class="experience-note" id="experience">
+                        <p class="eyebrow">In the developer corner</p>
+                        <div><h3>VoltageOS maintainer</h3><span class="mono">2024 — present</span></div>
+                        <p>Device builds, debugging, and upstream contributions for the Mi-Atoll family.</p>
+                    </div>
+                    <div class="toolbox">
+                        <p class="eyebrow">Tools I work with</p>
+                        <ul aria-label="Development tools"><li>Android / AOSP</li><li>Bash</li><li>Linux</li><li>HTML &amp; CSS</li><li>JavaScript</li><li>Python</li><li>Java</li><li>C++</li></ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="py-20 md:py-32 reveal">
-             <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">My Experience</h2>
-             <div class="max-w-3xl mx-auto relative">
-                 <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-slate-700"></div>
-                 <div class="relative mb-12">
-                     <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-violet-500 rounded-full border-4 border-slate-800"></div>
-                     <div class="md:grid md:grid-cols-2 md:gap-8">
-                         <div class="md:text-right md:pr-8 mb-4 md:mb-0">
-                             <p class="font-semibold text-white text-lg">VoltageOS</p>
-                             <p class="text-sm text-slate-400">2024 - Present</p>
-                         </div>
-                         <div class="glass-card p-6 rounded-lg shadow-lg">
-                             <h3 class="font-bold text-lg text-white">Device Maintainer</h3>
-                             <ul class="mt-2 list-disc list-inside text-slate-400 space-y-2">
-                                 <li>Maintain and optimize VoltageOS builds for Mi-Atoll devices, ensuring stability and performance.</li>
-                                 <li>Debug and resolve system issues, contributing fixes and improvements upstream.</li>
-                                 <li>Collaborate with other developers to enhance the overall ROM experience.</li>
-                             </ul>
-                         </div>
-                     </div>
-                 </div>
-                 <div class="relative mb-12">
-                     <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-violet-500 rounded-full border-4 border-slate-800"></div>
-                     <div class="md:grid md:grid-cols-2 md:gap-8">
-                         <div class="md:order-2 md:text-left md:pl-8 mb-4 md:mb-0">
-                             <p class="font-semibold text-white text-lg">Side Perks / <br class="block md:hidden">Personal Projects</p>
-                         </div>
-                         <div class="glass-card p-6 rounded-lg shadow-lg md:order-1">
-                             <h3 class="font-bold text-lg text-white">Web Developer</h3>
-                             <ul class="mt-2 list-disc list-inside text-slate-400 space-y-2">
-                                 <li>Design and build responsive websites using HTML, CSS and JavaScript.</li>
-                                 <li>Create clean, minimal interfaces with a focus on usability and performance.</li>
-                                 <li>Continuously learn and experiment with new web technologies to improve workflow and design quality.</li>
-                             </ul>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-        </section>
-
-        <section id="projects" class="py-20 md:py-32 reveal">
-             <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16">Featured Projects</h2>
-             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                 <div class="glass-card rounded-lg overflow-hidden group">
-                     <img src="images/voltageos.png" alt="VoltageOS" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300">
-                     <div class="p-6">
-                         <h3 class="text-xl font-bold text-white mb-2">VoltageOS</h3>
-                         <p class="text-slate-400 mb-4">
-                             Custom Android ROM maintained for Mi-Atoll devices, focused on stability, performance, and a refined user experience. Includes device-specific optimizations and upstream improvements.
-                         </p>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                             <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-full">Android</span>
-                             <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-full">AOSP</span>
-                             <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-full">Minimal</span>
-                         </div>
-                         <div class="flex space-x-4">
-                             <a href="http://www.voltageos.com" class="text-violet-400 hover:text-violet-300">Website</a>
-                             <a href="https://github.com/VoltageOS" class="text-violet-400 hover:text-violet-300">Source Code</a>
-                         </div>
-                     </div>
-                 </div>
-
-                 <div class="glass-card rounded-lg overflow-hidden group">
-                     <img src="images/bash.png" alt="Bash-Berry" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300">
-                     <div class="p-6">
-                         <h3 class="text-xl font-bold text-white mb-2">Bashery</h3>
-                         <p class="text-slate-400 mb-4">
-                             A collection of useful Bash scripts for cloning repos and environment setup.
-                         </p>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                             <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-full">Bash</span>
-                             <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-full">Linux</span>
-                             <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-full">Automation</span>
-                         </div>
-                         <div class="flex space-x-4">
-                             <a href="https://github.com/ihsanulrahman/bash-berry" class="text-violet-400 hover:text-violet-300">Source Code</a>
-                         </div>
-                     </div>
-                 </div>
-
-                 <div class="glass-card rounded-lg overflow-hidden group">
-                     <img src="images/tally.png" alt="Tally Counter" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300">
-                     <div class="p-6">
-                         <h3 class="text-xl font-bold text-white mb-2">Tally Counter</h3>
-                         <p class="text-slate-400 mb-4">
-                             A simple web based Tally counter.
-                         </p>
-                         <div class="flex flex-wrap gap-2 mb-4">
-                             <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
-                             <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
-                             <span class="bg-slate-700 text-slate-300 text-xs font-semibold px-2.5 py-1 rounded-full">Forge</span>
-                         </div>
-                         <div class="flex space-x-4">
-                             <a href="https://counter-tally.vercel.app/" class="text-violet-400 hover:text-violet-300">Website</a>
-                             <a href="https://github.com/ihsanulrahman/tally" class="text-violet-400 hover:text-violet-300">Source Code</a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-        </section>
-        <section id="contact" class="py-20 md:py-32 reveal">
-             <div class="text-center max-w-2xl mx-auto">
-                 <h2 class="text-3xl md:text-4xl font-bold text-white">Get In Touch</h2>
-                 <p class="mt-4 text-lg text-slate-400">My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you! Feel free to reach out about opportunities or collaborations.</p>
-                 <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-                     <a href="mailto:ihsanulrahman@proton.me" 
-                        class="inline-block w-full sm:w-auto bg-violet-600 hover:bg-violet-700 text-white font-medium py-4 px-8 rounded-lg transition-all duration-300 text-lg text-center transform hover:-translate-y-0.5 shadow-lg hover:shadow-violet-500/30">
-                        Say Hello
-                     </a>
-                 </div>
-                 <div class="mt-12 flex justify-center space-x-6">
-                     <a href="https://github.com/ihsanulrahman" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg></a>
-                     <a href="https://t.me/ihsanulrahman" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15.91L18.2 16.48c-.29.74-1.02 1.08-1.72.71l-4.35-2.15-2.23 2.15c-.45.43-1.02.21-1.12-.31z"></path></svg></a>
-                 </div>
-             </div>
+        <section class="contact-section section container" id="contact" aria-labelledby="contact-title">
+            <div class="contact-heading"><p class="eyebrow section-index">03 / Get in touch</p><span class="contact-asterisk" aria-hidden="true">✳</span></div>
+            <h2 id="contact-title">Have something<br>on your mind<span>?</span></h2>
+            <div class="contact-bottom">
+                <div><p>A project, a question, or just a hello.<br>I’d love to hear from you.</p><a class="email-link" href="mailto:ihsanulrahman@proton.me">ihsanulrahman@proton.me <span aria-hidden="true">↗</span></a></div>
+                <a class="button button-primary" href="mailto:ihsanulrahman@proton.me">Say hello <span aria-hidden="true">↗</span></a>
+            </div>
         </section>
     </main>
 
-    <footer class="py-6 border-t border-slate-800">
-        <div class="container mx-auto px-6 text-center text-slate-500">
-            <p>&copy; 2025 iHSAN</p>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="copyright-year">2026</span> iHSAN<span class="footer-dot">.</span> <span class="footer-note">Made with curiosity.</span></p>
+            <div class="footer-links"><a href="https://github.com/ihsanulrahman" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://t.me/ihsanulrahman" target="_blank" rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a><a href="#home">Back to top <span aria-hidden="true">↑</span></a></div>
         </div>
     </footer>
-    
-    <script src="script/script.js"></script>
 </body>
 </html>
