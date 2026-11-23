@@ -68,7 +68,7 @@ if ('IntersectionObserver' in window) {
         }
     }, { rootMargin: '-15% 0px -65% 0px', threshold: 0 });
 
-    for (const id of ['home', 'projects', 'about', 'contact']) {
+    for (const id of ['home', 'about', 'projects', 'contact']) {
         const section = document.getElementById(id);
         if (section) sectionObserver.observe(section);
     }
